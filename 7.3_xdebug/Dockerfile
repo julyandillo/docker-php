@@ -21,3 +21,8 @@ RUN pecl install sqlsrv \
 
 # Install required extensions
 RUN docker-php-ext-install intl mysqli pdo pdo_mysql gd opcache zip
+
+#Install X-Debug
+RUN pecl install xdebug-2.8.0
+RUN docker-php-ext-enable xdebug
+RUN echo "xdebug.remote_enable=1" >> /usr/local/etc/php/php.ini
