@@ -6,3 +6,5 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions mysqli soap pdo_mysql intl sqlsrv pdo_sqlsrv
 
 RUN echo 'memory_limit = 512M' >> /usr/local/etc/php/conf.d/docker-php-ram-limit.ini
+
+RUN rm -rf /var/lib/apt/lists/*
