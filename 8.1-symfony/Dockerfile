@@ -27,7 +27,7 @@ RUN echo 'memory_limit = 512M' >> /usr/local/etc/php/conf.d/docker-php-ram-limit
 
 RUN rm -rf /var/lib/apt/lists/*
 
-COPY ./xdebuig.ini "${PHP_INI_DIR}/conf.d"
+COPY ./xdebug.ini "${PHP_INI_DIR}/conf.d"
 
 # Install and update composer
 RUN curl https://getcomposer.org/composer.phar -o /usr/bin/composer && chmod +x /usr/bin/composer
