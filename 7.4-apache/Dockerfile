@@ -7,6 +7,9 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
 
 RUN echo 'memory_limit = 512M' >> /usr/local/etc/php/conf.d/docker-php-ram-limit.ini
 
+ENV TZ=Europe/Madrid
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN rm -rf /var/lib/apt/lists/*
 
 COPY ./xdebug.ini "${PHP_INI_DIR}/conf.d"
